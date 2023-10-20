@@ -1,4 +1,3 @@
-// import { Dispatch } from "redux";
 import { actionTypes, SetChosenChatDetails, SetMessages, Message, SetTyping, AddNewMessage, SetInitialTypingStatus, Typing, GroupChatDetails, SetChosenGroupChatDetails, ResetChat } from "./types";
 
 export const setChosenChatDetails = (chatDetails: {

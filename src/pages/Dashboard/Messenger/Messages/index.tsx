@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef }  from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { styled } from "@mui/system";
 import MessagesHeader from "./Header";
-// import DUMMY_MESSAGES from "./DUMMY_MESSAGES";
+
 import Message from "./Message";
 import { useAppSelector } from "../../../../store";
 import { fetchDirectChatHistory, fetchGroupChatHistory } from "../../../../socket/socketConnection";
@@ -23,7 +23,7 @@ const MainContainer = styled("div")({
 const Messages = () => {
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const {chat, auth: {userDetails}} = useAppSelector((state) => state);
+    const { chat, auth: { userDetails } } = useAppSelector((state) => state);
 
     const { chosenChatDetails, messages, chosenGroupChatDetails } = chat;
 
@@ -44,7 +44,7 @@ const Messages = () => {
     const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         setScrollPosition(e.currentTarget.scrollTop);
     };
-    
+
     useEffect(() => {
         if (chosenChatDetails) {
             fetchDirectChatHistory({
@@ -52,7 +52,7 @@ const Messages = () => {
             });
         }
 
-        if(chosenGroupChatDetails) {
+        if (chosenGroupChatDetails) {
             fetchGroupChatHistory({
                 groupChatId: chosenGroupChatDetails.groupId
             })
