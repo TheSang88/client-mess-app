@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import Robot from "./robot.gif";
+import Robot from "./robot.png";
 
 const Wrapper = styled("div")({
     flexGrow: 1,
@@ -17,7 +17,7 @@ const Wrapper = styled("div")({
 const WelcomeMessage = () => {
     return (
         <Wrapper>
-            <img src={Robot} alt="robot greeting welcome" style={{ height: "15rem" }}/>
+            <img src={Robot} alt="robot greeting welcome" style={{ height: "15rem" }} />
             <Typography variant="h6" sx={{ color: "white" }}>
                 To start chatting - select a friend for conversation
             </Typography>
